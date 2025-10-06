@@ -1,27 +1,10 @@
-import mongoose from 'mongoose'
+import { date, integer, serial, text, pgSchema } from 'drizzle-orm/pg-core'
 
-const UrlSchema = new mongoose.Schema({
-  urlId: {
-    type: String,
-    required: true,
-  },
-  origUrl: {
-    type: String,
-    required: true,
-  },
-  shortUrl: {
-    type: String,
-    required: true,
-  },
-  clicks: {
-    type: Number,
-    required: true,
-    default: 0
-  },
-  date: {
-    type: String,
-    default: Date.now,
-  },
+export const schema = pgSchema("schema")
+export const urlSchema = schema.table('urls', {
+  urlId: serial('urlId').primaryKey(),
+  origUrl: text('origUrl'),
+  shortUrl: text('shortUrl'),
+  clicks: integer('clicks').default(0),
+  date: date('date').default(Date.now),
 })
-
-export default mongoose.model('Url', UrlSchema)
