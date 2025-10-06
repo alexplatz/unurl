@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.get('/:urlId', getUrlById)
-app.post('/', postUrl)
+app.post('/:origUrl', postUrl)
 
 const PORT = process.env.PORT || 3333
 app.listen(PORT, () => {
