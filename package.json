@@ -1,8 +1,11 @@
 {
 	"name": "unurl",
 	"version": "1.0.0",
+	"type": "module",
 	"scripts": {
-		"dev": "node server/index.js"
+		"dev": "node server/index.js",
+    "mongo": "docker run -d --env-file .env -p 27017:27017 mongo",
+    "mongo:build": "docker build -t mongo ."
 	},
 	"dependencies": {
 		"body-parser": "^2.2.0",
