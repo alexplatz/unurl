@@ -11,7 +11,7 @@ To run the application:
 - Then send requests to the api at `http://localhost:3333`
 
 ## API
-POST `/` `{ "origUrl": "http://myurl.lol", "urlId": "newurl" }` -> returns the created shortened url
+POST `/` `{ "origUrl": "http://myurl.lol", "urlId": "newurl" }` -> returns a new shortened url
 
 GET `/` -> returns the health of the api
 
